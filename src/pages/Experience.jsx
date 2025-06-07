@@ -38,7 +38,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Work Experience</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Where I've worked</h2>
         <div className="space-y-8">
           {experiences.map((exp) => (
             <motion.div

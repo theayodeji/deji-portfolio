@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaDownload, FaPhone, FaEnvelope, FaMap } from "react-icons/fa";
-import { FaX, FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Contact Me</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Talk to me!</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div
@@ -23,7 +23,7 @@ const Contact = () => {
 
             <div className="flex gap-4">
               <a
-                href="https://github.com/dejithedev"
+                href="https://github.com/theayodeji"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
@@ -31,7 +31,7 @@ const Contact = () => {
                 <FaGithub className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com/in/deji"
+                href="https://www.linkedin.com/in/ayodeji-ola-140360245"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
@@ -39,7 +39,7 @@ const Contact = () => {
                 <FaLinkedin className="h-6 w-6" />
               </a>
               <a
-                href="https://twitter.com/deji"
+                href="https://twitter.com/dejithedev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
