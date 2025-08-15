@@ -33,20 +33,22 @@ const Home = () => {
           </motion.p>
 
           <div className="flex justify-center gap-4">
-            <motion.button
+            <motion.a
+            href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors glow-button"
             >
               View Projects
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
             >
               Contact Me
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>

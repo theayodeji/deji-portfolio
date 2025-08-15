@@ -1,5 +1,6 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import zoomfood from '../assets/zoomfood.svg';
 import havva from '../assets/havva-logo.png';
 
@@ -20,6 +21,13 @@ const projects = [
     github: 'https://github.com/Bumblebig/Havva',
     demo: 'https://havvadiagnosis.vercel.app',
     logo: havva,
+  },
+  {
+    title: 'Core Banking App',
+    description: 'A web-based fintech application for peer-to-peer transactions and utilities.',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+    github: 'https://github.com/AYANO-EMMANUEL/core-banking-app',
+    demo: '#',
   },
   {
     title: 'Core Banking App',
@@ -86,14 +94,44 @@ const ProjectCard = ({ project }) => (
 );
 
 const Projects = () => {
+  const scrollRef = useRef(null);
+  const scrollByAmount = 400;
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Projects I've worked on</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
+        {/* Horizontal scroll row with controls */}
+        <div className="relative">
+          <div
+            ref={scrollRef}
+            className="overflow-x-auto no-scrollbar pb-2"
+          >
+            <div className="flex gap-6 snap-x snap-mandatory">
+              {projects.map((project) => (
+                <div key={project.title} className="shrink-0 snap-start w-80 md:w-[28rem]">
+                  <ProjectCard project={project} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Controls */}
+          <button
+            type="button"
+            aria-label="Scroll left"
+            onClick={() => scrollRef.current?.scrollBy({ left: -scrollByAmount, behavior: 'smooth' })}
+            className="hidden sm:flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/90 shadow hover:bg-white transition"
+          >
+            <FaChevronLeft />
+          </button>
+          <button
+            type="button"
+            aria-label="Scroll right"
+            onClick={() => scrollRef.current?.scrollBy({ left: scrollByAmount, behavior: 'smooth' })}
+            className="hidden sm:flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/90 shadow hover:bg-white transition"
+          >
+            <FaChevronRight />
+          </button>
         </div>
       </div>
     </section>
