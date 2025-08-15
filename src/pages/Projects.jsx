@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import zoomfood from '../assets/zoomfood.svg';
 import havva from '../assets/havva-logo.png';
-
-
+import chatgram from '../assets/chatgram.png';
+import coinlens from '../assets/coinlens.png';
 const projects = [
   {
     title: 'Zoomfood',
@@ -23,11 +23,19 @@ const projects = [
     logo: havva,
   },
   {
-    title: 'Core Banking App',
-    description: 'A web-based fintech application for peer-to-peer transactions and utilities.',
-    tech: ['React', 'Vite', 'Tailwind CSS'],
-    github: 'https://github.com/AYANO-EMMANUEL/core-banking-app',
-    demo: '#',
+    title: 'Chatgram',
+    description: 'A web-based chat application using websockets and Node.js',
+    tech: ['React', 'Node.js', 'Socket.io', 'Tailwind CSS'],
+    github: 'https://github.com/theayodeji/chatgram',
+    demo: 'https://chatgram-demo.netlify.app',
+    logo: chatgram,
+  },
+  {
+    title: 'CoinLens',
+    description: 'A web-based crypto currency price tracking application',
+    tech: ['React', 'Node.js', 'Coingecko API', 'Tailwind CSS'],
+    github: 'https://github.com/theayodeji/dexlens',
+    logo: coinlens,
   },
   {
     title: 'Core Banking App',
@@ -36,6 +44,7 @@ const projects = [
     github: 'https://github.com/AYANO-EMMANUEL/core-banking-app',
     demo: '#',
   },
+
 ];
 
 const ProjectCard = ({ project }) => (
@@ -50,7 +59,7 @@ const ProjectCard = ({ project }) => (
       <div className="absolute inset-0 transition-opacity duration-300 hover:opacity-0">
         <div className="h-full w-full bg-gray-100 flex items-center justify-center">
           {/* Placeholder logo */}
-          <div className="h-32 w-32 p-3 rounded-full border-2 border-gray-300 flex items-center justify-center">
+          <div className="h-32 w-32 p-3 rounded-full border-2 border-gray-300 flex items-center justify-center overflow-hidden">
            {project.logo ? <img src={project.logo} alt={project.title} className="h-full w-full object-contain" /> : <p className='text-6xl font-bold'>C</p>}
           </div>
         </div>
