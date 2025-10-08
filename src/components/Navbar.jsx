@@ -14,17 +14,17 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-sm shadow-lg z-50">
+    <nav className="fixed w-full backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-bold">Deji</div>
+          <div className="text-2xl font-bold text-white">Deji</div>
           
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
+                className="text-white hover:text-primary-600 transition-colors"
                 whileHover={{ scale: 1.05 }}
               >
                 {link.name}

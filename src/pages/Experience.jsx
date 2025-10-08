@@ -33,32 +33,53 @@ const experiences = [
   },
 ];
 
-
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Where I've worked</h2>
-        <div className="space-y-8">
-          {experiences.map((exp) => (
+    <section id="experience" className="relative py-28 bg-black/60">
+      <div className="w-[95%] mx-auto px-4">
+        <div className="relative z-20 text-center text-white mb-14">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Where I've <span className="text-primary-500">Worked</span>
+          </h2>
+          <p className="text-neutral-400">My professional journey so far</p>
+        </div>
+        
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {experiences.map((exp, index) => (
             <motion.div
               key={exp.role}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white rounded-lg shadow-md p-6"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary-500/30 transition-all duration-300"
             >
-              <h3 className="text-xl font-bold mb-2 text-blue-500">{exp.role}</h3>
-              <p className="text-gray-600 mb-4">{exp.company}</p>
-              <p className="text-gray-500 mb-4">{exp.duration}</p>
-              <ul className="list-disc list-inside text-gray-600">
-                {exp.achievements.map((achievement, index) => (
-                  <li key={index}>{achievement}</li>
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                  <p className="text-primary-500">{exp.company}</p>
+                </div>
+                <span className="text-sm text-white bg-primary-500/70 text-primary-300 px-3 py-1 rounded-full">
+                  {exp.duration}
+                </span>
+              </div>
+              <ul className="space-y-2 mt-4">
+                {exp.achievements.map((achievement, idx) => (
+                  <li key={idx} className="flex items-start">
+                    <span className="text-primary-500 mr-2">▹</span>
+                    <span className="text-neutral-300">{achievement}</span>
+                  </li>
                 ))}
               </ul>
             </motion.div>
           ))}
         </div>
+      </div>
+      
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-10 -right-20 w-96 h-96 bg-primary-500/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute -bottom-0 -left-20 w-64 h-64 bg-primary-500/15 rounded-full filter blur-3xl"></div>
       </div>
     </section>
   );

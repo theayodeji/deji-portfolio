@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
-:root {
-  --primary-color: #0080FF;
-  --primary-hover: #0066CC;
-  --secondary-color: #6C757D;
-  --text-color: #212529;
+@theme {
+  --color-primary-500: rgb(220, 40, 20);
+  --color-primary-600: rgb(200, 20, 20);
+  --color-secondary: #6C757D;
+  --color-text: #212529;
 }
+
 
 /* Glowing button effect */
 .glow-button {
@@ -75,4 +76,25 @@ html {
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.rotate-\[-10deg\] .flex {
+  animation: marquee 40s linear infinite;
+  width: fit-content;
+  will-change: transform;
+  display: flex;
+}
+
+/* Pause animation on hover */
+.rotate-\[-10deg\]:hover .flex {
+  animation-play-state: paused;
 }
