@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const WhatILearned = () => {
   const whatWorks = [
-    "Clearn architecture everytime",
+    "Clean architecture everytime",
     "Build for performance and scalability",
     "Build for accessibility",
     "Following Naming conventions",
