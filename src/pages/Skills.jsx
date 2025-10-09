@@ -9,6 +9,7 @@ import {
   FaPython,
   FaPhp,
 } from "react-icons/fa";
+import { FaN } from "react-icons/fa6";
 import { SiTypescript } from "react-icons/si";
 
 const skills = [
@@ -21,11 +22,12 @@ const skills = [
   { name: "Python", icon: FaPython, color: "#3776AB" },
   { name: "PHP", icon: FaPhp, color: "#777BB4" },
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  {name: "Next.js", icon: FaN, color: "#0d0d0d"}
 ];
 
 const Skills = () => {
   return (
-    <section className="relative bg-black/30 pb-32 pt-18">
+    <section className="relative bg-black/30 pb-32 pt-18" id="skills">
       <div className="relative z-20 text-center text-white mb-14">
         <h2 className="text-3xl md:text-5xl md:mb-4 font-bold">
           My <span className="text-primary-500">Stack</span>
@@ -49,7 +51,7 @@ const Skills = () => {
                       color={skill.color}
                       className="drop-shadow-lg flex-shrink-0"
                     />
-                    <span className="text-white text-lg mt-2 whitespace-nowrap">
+                    <span className="text-white text-center text-lg mt-2 whitespace-nowrap">
                       {skill.name}
                     </span>
                   </div>

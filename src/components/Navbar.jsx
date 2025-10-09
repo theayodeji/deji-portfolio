@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="fixed w-full backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-bold text-white">Deji</div>
+          <div className="text-2xl font-bold text-white">Dejithe<span className="text-primary-500">dev.</span></div>
           
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
@@ -35,7 +35,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600"
+              className="text-white hover:text-primary-500"
             >
               <svg
                 className="h-6 w-6"
@@ -61,7 +61,7 @@ const Navbar = () => {
             <motion.a
               key={link.name}
               href={link.href}
-              className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+              className="px-4 block py-2 text-white hover:text-primary-600 transition-colors"
               onClick={() => setIsOpen(false)}
               whileHover={{ scale: 1.05 }}
             >

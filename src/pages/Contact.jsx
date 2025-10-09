@@ -1,8 +1,41 @@
 import { motion } from "framer-motion";
+import { useState, useRef } from "react";
 import { FaGithub, FaLinkedin, FaDownload, FaPhone, FaEnvelope, FaMap } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import emailjs from '@emailjs/browser';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Contact = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const loadingToast = toast.loading('Sending message...');
+
+    emailjs
+      .sendForm(
+        'service_your_service_id', // Replace with your EmailJS service ID
+        'template_your_template_id', // Replace with your EmailJS template ID
+        form.current,
+        'your_public_key' // Replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          toast.success('Message sent successfully!', { id: loadingToast });
+          form.current.reset();
+          setIsSubmitting(false);
+        },
+        (error) => {
+          toast.error('Failed to send message. Please try again.', { id: loadingToast });
+          console.error('Error:', error);
+          setIsSubmitting(false);
+        }
+      );
+  };
+
   const socialLinks = [
     {
       icon: <FaGithub className="h-6 w-6" />,
@@ -28,6 +61,15 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative py-28 bg-black/60">
+      <Toaster position="top-center" toastOptions={{
+        style: {
+          background: '#1f2937',
+          color: '#fff',
+          border: '1px solid #374151',
+          borderRadius: '0.5rem',
+          padding: '1rem',
+        },
+      }} />
       <div className="w-[95%] mx-auto px-4">
         <div className="relative z-20 text-center text-white mb-14">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
@@ -103,12 +145,14 @@ const Contact = () => {
             className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10"
           >
             <h3 className="text-2xl font-bold text-white mb-6">Send me a message</h3>
-            <form className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div className="space-y-1">
                 <label htmlFor="name" className="text-sm font-medium text-neutral-300">Name</label>
                 <input
                   id="name"
+                  name="user_name"
                   type="text"
+                  required
                   placeholder="Your name"
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-transparent transition-all"
                 />
@@ -117,7 +161,9 @@ const Contact = () => {
                 <label htmlFor="email" className="text-sm font-medium text-neutral-300">Email</label>
                 <input
                   id="email"
+                  name="user_email"
                   type="email"
+                  required
                   placeholder="your.email@example.com"
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-transparent transition-all"
                 />
@@ -126,14 +172,17 @@ const Contact = () => {
                 <label htmlFor="message" className="text-sm font-medium text-neutral-300">Message</label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
+                  required
                   placeholder="Your message here..."
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-transparent transition-all resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-opacity"
+                disabled={isSubmitting}
+                className={`w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-opacity ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 Send Message
               </button>

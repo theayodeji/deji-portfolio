@@ -50,17 +50,17 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-2 md:mb-4">
               Hi, I'm <span className="text-primary-500">Ayodeji Ola</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white mb-4">
+            <p className="text-xl md:text-2xl text-white mb-2 md:mb-4">
               A Fullstack Developer
             </p>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
-              className="text-base text-neutral-400 mb-8 max-w-[90%] lg:max-w-[750px] mx-auto"
+              className="text-sm md:text-base text-neutral-400 mb-8 max-w-[90%] lg:max-w-[750px] mx-auto"
             >
               I'm a results-driven Fullstack Developer with a passion for
               building fast, scalable and user-friendly applications. I have a

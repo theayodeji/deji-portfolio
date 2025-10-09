@@ -11,7 +11,7 @@ import portfolio from '/portfolio.png';
 
 const projects = [
   {
-    title: 'ThinklyAi',
+    title: 'ThinklyAI',
     description: 'An AI-powered study tool for students.',
     tech: ['React', 'TailwindCSS', 'Framer Motion', 'Node.js', 'MongoDB', 'Gemini API'],
     github: 'https://github.com/theayodeji/thinkly-mvp',
@@ -19,7 +19,7 @@ const projects = [
     logo: thinkly,
   },
   {
-    title: 'Zoomfood',
+    title: 'ZoomFood',
     description: 'An e-commerce platform for food delivery in urban areas.',
     tech: ['React', 'SASS', 'Node.js', 'MongoDB'],
     github: 'https://github.com/theayodeji/zoomfood',
@@ -29,7 +29,7 @@ const projects = [
   {
     title: 'Snappad',
     description: 'A shortlet and home-rental platform for travellers.',
-    tech: ['React', 'Vite', 'Tailwind CSS'],
+    tech: ['React', 'Next.js', 'Tailwind CSS', "Geolocation APIs", "Framer Motion", "Paystack API"],
     github: 'https://github.com/theayodeji/snappad',
     demo: '#',
     logo: snappad,
@@ -37,8 +37,8 @@ const projects = [
   {
     title: 'Portfolio Website',
     description: 'This gorgeous portfolio website you\'re scrolling through.',
-    tech: ['React', 'Vite', 'Tailwind CSS'],
-    github: 'https://github.com/theayodeji/snappad',
+    tech: ['React', 'Vite', 'Tailwind CSS', "Framer Motion"],
+    github: 'https://github.com/theayodeji/deji-portfolio',
     demo: '#',
     logo: portfolio,
   },
