@@ -1,34 +1,44 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const experiences = [
   {
-    role: 'Founder, Lead Developer',
-    company: 'Zoomfood (pre-launch)',
-    duration: 'January 2024 - Present',
+    role: "FullStack Software Developer",
+    company: "McGeorge Consulting Ltd.",
+    duration: "November 2025 - Present",
     achievements: [
-      'Spearheaded the development of a food delivery platform tailored to urban environments',
-      'Led end-to-end product development including UI design, engineering, and user acquisition strategy',
-      'Oversaw the technical implementation using React, Next.js, and MongoDB for the platform MVP',
+      "Built an API for Nigerian e-invoicing compliance with a dashbord for non technical users",
+      "Architected a fullstack Human resource management Saas, reducing the need for manual data entry, employee management, talent search, thus increasing efficiency",
+      "Helped the company obtain accreditation for NRS System Integration by  demonstrating technical expertise",
     ],
   },
   {
-    role: 'Frontend Developer',
-    company: 'Black Innovations Africa',
-    duration: 'October 2023 - January 2024',
+    role: "Founder, Lead Developer",
+    company: "Zoomfood (pre-launch)",
+    duration: "January 2024 - Present",
     achievements: [
-      'Built Examy, a mini educational platform focused on an engaging learning experience using React, Tanstack Query, and Tailwind CSS',
-      'Developed a brochure website for an e-banking client, increasing lead generation',
-      'Improved performance and maintainability of an automobile e-commerce site with clean code practices',
+      "Spearheaded the development of a food delivery platform tailored to urban environments",
+      "Led end-to-end product development including UI design, engineering, and user acquisition strategy",
+      "Oversaw the technical implementation using React, Next.js, and MongoDB for the platform MVP",
     ],
   },
   {
-    role: 'Internship Trainee, Software Developer',
-    company: 'McGeorge Consulting Ltd.',
-    duration: 'April 2024 - November 2024',
+    role: "Frontend Developer",
+    company: "Black Innovations Africa",
+    duration: "October 2023 - January 2024",
     achievements: [
-      'Led frontend development of an AI-powered medical chatbot, using React, Tailwind CSS powered by the OpenAI API, to assist with health diagnostics',
-      'Transformed complex UI/UX designs into responsive, high-performance components on existing company projects',
-      'Contributed to general product brainstorming to enhance interactivity and user experience',
+      "Built Examy, a mini educational platform focused on an engaging learning experience using React, Tanstack Query, and Tailwind CSS",
+      "Developed a brochure website for an e-banking client, increasing lead generation",
+      "Improved performance and maintainability of an automobile e-commerce site with clean code practices",
+    ],
+  },
+  {
+    role: "Internship Trainee, Software Developer",
+    company: "McGeorge Consulting Ltd.",
+    duration: "April 2024 - November 2024",
+    achievements: [
+      "Led frontend development of an AI-powered medical chatbot, using React, Tailwind CSS powered by the OpenAI API, to assist with health diagnostics",
+      "Transformed complex UI/UX designs into responsive, high-performance components on existing company projects",
+      "Contributed to general product brainstorming to enhance interactivity and user experience",
     ],
   },
 ];
@@ -43,7 +53,7 @@ const Experience = () => {
           </h2>
           <p className="text-neutral-400">My professional journey so far</p>
         </div>
-        
+
         <div className="space-y-6 max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
             <motion.div
@@ -75,7 +85,7 @@ const Experience = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-10 -right-20 w-96 h-96 bg-primary-500/10 rounded-full filter blur-3xl"></div>

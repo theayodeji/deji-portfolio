@@ -43,7 +43,7 @@ const Home = () => {
       id="home"
       className="bg-[#141414] isolate overflow-hidden relative"
     >
-      <div className="flex items-center justify-center min-h-screen bg-[#14141490] backdrop-blur-2xl">
+      <div className="flex items-center justify-center min-h-[600px] h-screen bg-[#14141490] backdrop-blur-2xl">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

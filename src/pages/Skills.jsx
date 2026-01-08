@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -26,6 +27,23 @@ const skills = [
 ];
 
 const Skills = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section className="relative bg-black/30 pb-32 pt-18" id="skills">
       <div className="relative z-20 text-center text-white mb-14">
@@ -35,28 +53,25 @@ const Skills = () => {
         <p className="text-neutral-400">Technologies I work with</p>
       </div>
       
-      <div className="rotate-[-10deg] bg-white/10 w-[110%] translate-x-[-5%] py-5 overflow-hidden">
+      <div className="rotate-[-10deg] bg-white/10 w-[110%] translate-x-[-5%] py-3 md:py-5 overflow-hidden">
         <div className="flex">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="flex gap-20 flex-shrink-0 px-10">
-              {skills.map((skill, idx) => {
-                const Icon = skill.icon;
-                return (
-                  <div
-                    key={`${i}-${idx}`}
-                    className="flex flex-col items-center justify-center flex-shrink-0"
-                  >
-                    <Icon
-                      size={60}
-                      color={skill.color}
-                      className="drop-shadow-lg flex-shrink-0"
-                    />
-                    <span className="text-white text-center text-lg mt-2 whitespace-nowrap">
-                      {skill.name}
-                    </span>
-                  </div>
-                );
-              })}
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="flex gap-10 md:gap-20 flex-shrink-0 px-10">
+              {skills.map((skill, idx) => (
+                <div
+                  key={`${i}-${idx}`}
+                  className="flex flex-col items-center justify-center flex-shrink-0"
+                >
+                  <skill.icon
+                    size={isMobile ? 30 : 60}
+                    color={skill.color}
+                    className="drop-shadow-lg flex-shrink-0 transition-all duration-300"
+                  />
+                  <span className="text-white text-center text-sm md:text-lg mt-1 md:mt-2 whitespace-nowrap">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
             </div>
           ))}
         </div>
