@@ -12,14 +12,15 @@ const experiences = [
     ],
   },
   {
-    role: "Founder, Lead Developer",
-    company: "Zoomfood (pre-launch)",
+    role: "Backend Engineer",
+    company: "Page234",
     duration: "January 2024 - Present",
     achievements: [
-      "Spearheaded the development of a food delivery platform tailored to urban environments",
-      "Led end-to-end product development including UI design, engineering, and user acquisition strategy",
-      "Oversaw the technical implementation using React, Next.js, and MongoDB for the platform MVP",
-    ],
+      "Architected and built a real-time group chat application configured for high-concurrency, low-latency messaging",
+      "Engineered a secure user authentication and authorization system using Better-Auth implementing OAuth, email/password, login support",
+      "Implemented an efficient file upload system with server-side validation and optimized image compression, reducing storage costs by 20%",
+      "Managed secure deployment on DigitalOcean using Docker and Nginx, optimizing for performance and establishing automated CI/CD pipelines with GitHub Actions"
+    ]
   },
   {
     role: "Frontend Developer",

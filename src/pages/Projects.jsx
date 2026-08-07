@@ -7,14 +7,21 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import zoomfood from "/zoomfood.png";
-import havva from "/havva.png";
-import chatgram from "../assets/chatgram.png";
 import coinlens from "/coinlens.png";
 import thinkly from "/thinkly.png";
-import snappad from "/snappad.png";
 import portfolio from "/portfolio.png";
+import wave from "/wave.png";
 
 const projects = [
+  {
+    title: "Wave",
+    description:
+      "A social discovery platform for events. Users can create, discover, and RSVP to events.",
+    tech: ["React", "Node.js", "TailwindCSS", "Framer Motion", "MongoDB"],
+    github: "https://github.com/theayodeji/wave",
+    demo: "https://wave-app.vercel.app/",
+    logo: wave,
+  },
   {
     title: "ThinklyAI",
     description: "An AI-powered study tool for students.",
@@ -29,6 +36,15 @@ const projects = [
     github: "https://github.com/theayodeji/thinkly-mvp",
     demo: "https://thinkly-mvp.vercel.app/",
     logo: thinkly,
+  },
+  {
+    title: "Logiq",
+    description:
+      "An NPM package for Observability. In development but first release of logger package is active.",
+    tech: ["OpenTelemetry", "Node.js", "npm"],
+    github: "https://github.com/theayodeji/logiq/blob/main/packages/logger",
+    demo: "https://www.npmjs.com/package/@logiq-ts/logger",
+    logo: "https://img.icons8.com/color/800/npm.jpg",
   },
   {
     title: "CoinLens",
@@ -56,21 +72,6 @@ const projects = [
     logo: "https://img.icons8.com/plasticine/1200/apple-music.jpg",
   },
   {
-    title: "Snappad",
-    description: "A shortlet and home-rental platform for travellers.",
-    tech: [
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Geolocation APIs",
-      "Framer Motion",
-      "Paystack API",
-    ],
-    github: "https://github.com/theayodeji/snappad",
-    demo: "#",
-    logo: snappad,
-  },
-  {
     title: "Portfolio Website",
     description: "This gorgeous portfolio website you're scrolling through.",
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
@@ -78,23 +79,15 @@ const projects = [
     demo: "#",
     logo: portfolio,
   },
-  {
-    title: "Havva",
-    description:
-      "A medical chatbot providing health diagnostics and valuable health information to users.",
-    tech: ["React", "OpenAI API", "Tailwind CSS"],
-    github: "https://github.com/Bumblebig/Havva",
-    demo: "https://havvadiagnosis.vercel.app",
-    logo: havva,
-  },
-  {
-    title: "Chatgram",
-    description: "A web-based chat application using websockets and Node.js",
-    tech: ["React", "Node.js", "Socket.io", "Tailwind CSS"],
-    github: "https://github.com/theayodeji/chatgram",
-    demo: "https://chatgram-demo.netlify.app",
-    logo: chatgram,
-  },
+
+  // {
+  //   title: "Chatgram",
+  //   description: "A web-based chat application using websockets and Node.js",
+  //   tech: ["React", "Node.js", "Socket.io", "Tailwind CSS"],
+  //   github: "https://github.com/theayodeji/chatgram",
+  //   demo: "https://chatgram-demo.netlify.app",
+  //   logo: chatgram,
+  // },
 ];
 
 const ProjectCard = ({ project }) => (
@@ -110,7 +103,7 @@ const ProjectCard = ({ project }) => (
       className="w-full h-[160px] object-cover object-top rounded-t-lg"
     />
     <div className="p-6 bg-white/10 rounded-lg h-full flex-1">
-      <h3 className="text-xl text-white font-bold mb-2">{project.title}</h3>
+      <h3 className="text-2xl text-white font-bold mb-2">{project.title}</h3>
       <p className="text-white mb-2">{project.description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tech.map((tech) => (
