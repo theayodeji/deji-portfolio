@@ -14,7 +14,7 @@ const experiences = [
   {
     role: "Backend Engineer",
     company: "Page234",
-    duration: "January 2025 - Present",
+    duration: "January 2026 - Present",
     achievements: [
       "Architected and built a real-time group chat application configured for high-concurrency, low-latency messaging",
       "Engineered a secure user authentication and authorization system using Better-Auth implementing OAuth, email/password, login support",
