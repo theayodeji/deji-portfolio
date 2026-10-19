@@ -54,20 +54,19 @@ const Home = () => {
               Hi, I'm <span className="text-primary-500">Ayodeji Ola</span>
             </h1>
             <p className="text-xl md:text-2xl text-white mb-2 md:mb-4">
-              A Fullstack Developer
+              A Software Engineer
             </p>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
-              className="text-sm md:text-base text-neutral-400 mb-8 max-w-[90%] lg:max-w-[750px] mx-auto"
+              className="text-sm md:text-base text-neutral-200 mb-8 max-w-[90%] lg:max-w-[750px] mx-auto"
             >
-              I'm a results-driven Fullstack Developer with a passion for
-              building fast, scalable and user-friendly applications. I have a
-              strong background in React, TypeScript, Node.js, Python, and other
-              technologies with proven experience in transforming challenging
-              UI/UX designs into neat, readable code and building robust,
-              performant backend applications.
+              I'm a results-driven Software Engineer and a professional
+              tinkerer. I love discovering what works and what doesn't. My
+              philosophy is to is centered around the use of software to solve
+              real-world problems and make a positive impact across different
+              facets of life.
             </motion.p>
 
             <div className="flex justify-center gap-4">

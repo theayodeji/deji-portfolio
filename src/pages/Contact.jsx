@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
-import { FaGithub, FaLinkedin, FaDownload, FaPhone, FaEnvelope, FaMap } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaDownload,
+  FaPhone,
+  FaEnvelope,
+  FaMap,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import emailjs from '@emailjs/browser';
-import toast, { Toaster } from 'react-hot-toast';
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
   const form = useRef();
@@ -13,26 +20,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const loadingToast = toast.loading('Sending message...');
+    const loadingToast = toast.loading("Sending message...");
 
     emailjs
       .sendForm(
-        'service_your_service_id', // Replace with your EmailJS service ID
-        'template_your_template_id', // Replace with your EmailJS template ID
+        "service_your_service_id", // Replace with your EmailJS service ID
+        "template_your_template_id", // Replace with your EmailJS template ID
         form.current,
-        'your_public_key' // Replace with your EmailJS public key
+        "your_public_key", // Replace with your EmailJS public key
       )
       .then(
         (result) => {
-          toast.success('Message sent successfully!', { id: loadingToast });
+          toast.success("Message sent successfully!", { id: loadingToast });
           form.current.reset();
           setIsSubmitting(false);
         },
         (error) => {
-          toast.error('Failed to send message. Please try again.', { id: loadingToast });
-          console.error('Error:', error);
+          toast.error("Failed to send message. Please try again.", {
+            id: loadingToast,
+          });
+          console.error("Error:", error);
           setIsSubmitting(false);
-        }
+        },
       );
   };
 
@@ -40,36 +49,39 @@ const Contact = () => {
     {
       icon: <FaGithub className="h-6 w-6" />,
       url: "https://github.com/theayodeji",
-      label: "GitHub"
+      label: "GitHub",
     },
     {
       icon: <FaLinkedin className="h-6 w-6" />,
       url: "https://www.linkedin.com/in/ayodejiola",
-      label: "LinkedIn"
+      label: "LinkedIn",
     },
     {
       icon: <FaXTwitter className="h-6 w-6" />,
       url: "https://twitter.com/dejithedev",
-      label: "Twitter"
+      label: "Twitter",
     },
     {
       icon: <FaDownload className="h-6 w-6" />,
-      url: "/deji-portfolio/ayodeji-fullstack-resume.pdf",
-      label: "Resume"
-    }
+      url: "/deji-portfolio/ayodeji_ola_cv.pdf",
+      label: "Resume",
+    },
   ];
 
   return (
     <section id="contact" className="relative py-28 bg-black/60">
-      <Toaster position="top-center" toastOptions={{
-        style: {
-          background: '#1f2937',
-          color: '#fff',
-          border: '1px solid #374151',
-          borderRadius: '0.5rem',
-          padding: '1rem',
-        },
-      }} />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: "#1f2937",
+            color: "#fff",
+            border: "1px solid #374151",
+            borderRadius: "0.5rem",
+            padding: "1rem",
+          },
+        }}
+      />
       <div className="w-[95%] mx-auto px-4">
         <div className="relative z-20 text-center text-white mb-14">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
@@ -87,10 +99,13 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Let's Connect</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Let's Connect
+              </h3>
               <p className="text-neutral-300">
                 I'm always open to discussing new projects, creative ideas, or
-                opportunities to be a part of your visions. Feel free to reach out!
+                opportunities to be a part of your visions. Feel free to reach
+                out!
               </p>
             </div>
 
@@ -101,8 +116,8 @@ const Contact = () => {
                 </div>
                 <span>+234-906-119-6902</span>
               </div>
-              <a 
-                href="mailto:ayodeji.ola.e@gmail.com" 
+              <a
+                href="mailto:ayodeji.ola.e@gmail.com"
                 className="flex items-center gap-4 text-neutral-300 hover:text-primary-500 transition-colors"
               >
                 <div className="p-2 bg-white/5 rounded-lg">
@@ -144,10 +159,17 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Send me a message</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">
+              Send me a message
+            </h3>
             <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div className="space-y-1">
-                <label htmlFor="name" className="text-sm font-medium text-neutral-300">Name</label>
+                <label
+                  htmlFor="name"
+                  className="text-sm font-medium text-neutral-300"
+                >
+                  Name
+                </label>
                 <input
                   id="name"
                   name="user_name"
@@ -158,7 +180,12 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-1">
-                <label htmlFor="email" className="text-sm font-medium text-neutral-300">Email</label>
+                <label
+                  htmlFor="email"
+                  className="text-sm font-medium text-neutral-300"
+                >
+                  Email
+                </label>
                 <input
                   id="email"
                   name="user_email"
@@ -169,7 +196,12 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-1">
-                <label htmlFor="message" className="text-sm font-medium text-neutral-300">Message</label>
+                <label
+                  htmlFor="message"
+                  className="text-sm font-medium text-neutral-300"
+                >
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -182,7 +214,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-opacity ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-opacity ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
               >
                 Send Message
               </button>
@@ -190,7 +222,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Decorative elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-1/4 -right-20 w-96 h-96 bg-primary-500/10 rounded-full filter blur-3xl"></div>
